@@ -11,8 +11,8 @@
 - [x] GuessTheSecretNumber
 - [x] GuessTheRandomNumber
 - [x] GuessTheNewNumber
-- [] PredictTheFuture
-- [] PredictTheBlockhash
+- [ ] PredictTheFuture
+- [ ] PredictTheBlockhash
 
 ### Steps to setup in local
 
