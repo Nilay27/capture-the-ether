@@ -1,5 +1,9 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
+const path = require('path');
+const util = require("../utils.js")
+
+var scriptName = path.basename(__filename);
 
 const CHALLENGE_ADDRESS = `0x16a73514172C8B1876F485259e40779E95012c49`;
 
@@ -16,4 +20,5 @@ it("CallMe", async function () {
 
   var isComplete = await contract.isComplete();
   expect(isComplete).to.be.true;
+  util.updateTotalPoints(scriptName)
 });

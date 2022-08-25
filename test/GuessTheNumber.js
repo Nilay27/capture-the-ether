@@ -1,5 +1,9 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
+const path = require('path');
+const util = require("../utils.js")
+
+var scriptName = path.basename(__filename);
 
 const CHALLENGE_ADDRESS = "0xe76858cc3F6d72E46c97bD272C061b4Cb564A2F2";
 
@@ -16,4 +20,5 @@ it("GuessTheNumberChallenge", async function () {
   });
   await tx.wait();
   expect(tx.hash).to.not.be.undefined;
+  util.updateTotalPoints(scriptName)
 });

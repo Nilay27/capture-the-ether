@@ -1,5 +1,9 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
+const path = require('path');
+const util = require("../utils.js")
+
+var scriptName = path.basename(__filename);
 
 const CHALLENGE_ADDRESS = "0x71c46Ed333C35e4E6c62D32dc7C8F00D125b4fee";
 
@@ -16,4 +20,6 @@ it("ChooseANickname", async function () {
   await tx.wait();
 
   expect(tx.hash).to.not.be.undefined;
+  util.updateTotalPoints(scriptName)
 });
+
