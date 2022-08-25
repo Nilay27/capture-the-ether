@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "capture-the-ether solutions",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "c": "npx hardhat compile",
     "t": "npx hardhat test"
