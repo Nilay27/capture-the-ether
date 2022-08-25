@@ -1,7 +1,7 @@
 ---
  Title: capture-the-ether
  Description: Solutions for Capture The Ether CTF
- Progress: 1550/11600
+ Progress: 2050/11600
 ---
 * Executable solutions for all challenges from [CaptureTheEther.com](https://capturetheether.com/)
 * Nickname - kumar.nilay
@@ -17,7 +17,7 @@
 - [x] GuessTheNewNumber (400 points)
 - [ ] PredictTheFuture (500 points)
 - [ ] PredictTheBlockhash (750 points)
-- [ ] TokenSale (500 points)
+- [x] TokenSale (500 points)
 - [ ] TokenWhale (500 points)
 - [ ] RetirementFund (500 points)
 - [ ] Mapping (750 points)
