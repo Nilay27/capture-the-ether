@@ -28,10 +28,6 @@ contract PredictTheBlockHashChallenge {
         require(msg.sender == guesser);
         require(block.number > settlementBlockNumber);
 
-        /**
-         * If settle is called 1 hour after the lockInGuess(), block.blockhash(blockNumber)
-         * will return zero, so we need to guess 0.
-         */
         bytes32 answer = block.blockhash(settlementBlockNumber);
 
         guesser = 0;

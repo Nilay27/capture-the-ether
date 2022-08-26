@@ -15,21 +15,27 @@ beforeEach(async () => {
   );
   contract = factory.attach(CHALLENGE_ADDRESS);
 });
-
-it("PredictTheBlockHash lock in guess", async function () {
-  /**
-   * If settle is called 1 hour after the lockInGuess(), block.blockhash(blockNumber)
-   * will return zero, so we need to guess 0.
-   */
-  const guess = ethers.utils.formatBytes32String(0);
-  const tx = await contract.lockInGuess(guess, {
-    value: ethers.utils.parseEther("1"),
-    gasLimit: 3e6,
-  });
-  console.log("submitting guess as: ", guess);
-  await tx.wait();
-  console.log("guess submitted");
-});
+/**
+ * NOTE:
+ * 1. Comment out lock in guess, when you are calling settle.
+ * 2. Do not call settle just after calling lock in guess, as it will set guesser to 0 (there is not revert
+ * in settle if guess != answer).
+ * hence if you call lockinGuess again, it will not revert
+ */
+// it("PredictTheBlockHash lock in guess", async function () {
+//   /**
+//    * If settle is called 1 hour after the lockInGuess(), block.blockhash(blockNumber)
+//    * will return zero, as blockhash of only last 256 blocks are tracked, so we need to guess 0.
+//    */
+//   const guess = ethers.utils.formatBytes32String(0);
+//   const tx = await contract.lockInGuess(guess, {
+//     value: ethers.utils.parseEther("1"),
+//     gasLimit: 3e6,
+//   });
+//   console.log("submitting guess as: ", guess);
+//   await tx.wait();
+//   console.log("guess submitted");
+// });
 
 it("PredictTheBlockHash settle", async function () {
   /**

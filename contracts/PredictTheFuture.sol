@@ -51,7 +51,7 @@ contract PredictTheFutureSolution {
         target.lockInGuess.value(1 ether)(guess);
     }
 
-    function solve() public{
+    function solve() public {
         target.settle();
         require(target.isComplete());
         msg.sender.transfer(address(this).balance);
