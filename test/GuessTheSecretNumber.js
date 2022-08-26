@@ -1,7 +1,7 @@
 const { expect, assert } = require("chai");
 const { ethers } = require("hardhat");
-const path = require('path');
-const util = require("../utils.js")
+const path = require("path");
+const util = require("../utils.js");
 
 var scriptName = path.basename(__filename);
 
@@ -30,5 +30,5 @@ it("GuessTheSecretNumber", async function () {
 
   var isComplete = await contract.isComplete();
   expect(isComplete).to.be.true;
-  util.updateTotalPoints(scriptName)
+  util.updateTotalPoints(scriptName);
 });

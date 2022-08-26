@@ -1,6 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("dotenv").config();
- 
+
 const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY;
 const WALLET_PRIVATE_KEY = process.env.WALLET_PRIVATE_KEY;
 const WALLET2 = process.env.WALLET2;
@@ -26,16 +26,16 @@ module.exports = {
     compilers: [
       { version: "0.4.21" },
       { version: "0.7.3" },
-      { version: "0.8.4" }  
+      { version: "0.8.4" },
     ],
   },
   networks: {
     ropsten: {
       url: `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`,
-      accounts: [`${WALLET_PRIVATE_KEY}`, `${WALLET2}`]
-    }
+      accounts: [`${WALLET_PRIVATE_KEY}`, `${WALLET2}`],
+    },
   },
   mocha: {
     timeout: 3000 * 1e3,
-  }
+  },
 };

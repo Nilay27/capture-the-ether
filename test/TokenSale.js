@@ -1,7 +1,7 @@
 const { expect, assert } = require("chai");
 const { ethers } = require("hardhat");
-const path = require('path');
-const util = require("../utils.js")
+const path = require("path");
+const util = require("../utils.js");
 
 var scriptName = path.basename(__filename);
 
@@ -15,23 +15,24 @@ before(async () => {
 });
 
 it("TokenSale", async function () {
-    const calculateAmountFactory = await ethers.getContractFactory("CalculateAmount");
-    console.log('deploying calculate contract')
-    calculateContract = await calculateAmountFactory.deploy()
-    await calculateContract.deployed()
-    console.log("calculate contract deployed")
-    const result = await calculateContract.calculate()
-    console.log(result)
-    const tx = await contract.buy(result[0], { value: result[1] });
-    await tx.wait();
-    console.log("your token balance", await contract.balanceOf(eoa.address))
+  const calculateAmountFactory = await ethers.getContractFactory(
+    "CalculateAmount"
+  );
+  console.log("deploying calculate contract");
+  calculateContract = await calculateAmountFactory.deploy();
+  await calculateContract.deployed();
+  console.log("calculate contract deployed");
+  const result = await calculateContract.calculate();
+  console.log(result);
+  const tx = await contract.buy(result[0], { value: result[1] });
+  await tx.wait();
+  console.log("your token balance", await contract.balanceOf(eoa.address));
 
-    const tx2 = await contract.sell(1, { gasLimit: 3e6 });
-    console.log("sell tx intitiated");
-    await tx2.wait();
-    console.log("sell completed");
-    var isComplete = await contract.isComplete();
-    expect(isComplete).to.be.true;
-    util.updateTotalPoints(scriptName)
+  const tx2 = await contract.sell(1, { gasLimit: 3e6 });
+  console.log("sell tx intitiated");
+  await tx2.wait();
+  console.log("sell completed");
+  var isComplete = await contract.isComplete();
+  expect(isComplete).to.be.true;
+  util.updateTotalPoints(scriptName);
 });
-

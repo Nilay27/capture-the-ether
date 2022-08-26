@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const path = require('path');
-const util = require("../utils.js")
+const path = require("path");
+const util = require("../utils.js");
 
 var scriptName = path.basename(__filename);
 
@@ -16,10 +16,9 @@ before(async () => {
 
 it("ChooseANickname", async function () {
   const nickname = ethers.utils.formatBytes32String("kumarnilay27");
-  const tx = await contract.setNickname(nickname)
+  const tx = await contract.setNickname(nickname);
   await tx.wait();
 
   expect(tx.hash).to.not.be.undefined;
-  util.updateTotalPoints(scriptName)
+  util.updateTotalPoints(scriptName);
 });
-

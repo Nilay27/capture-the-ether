@@ -28,10 +28,10 @@ contract TokenSaleChallenge {
     }
 }
 
-contract CalculateAmount{
-    function calculate() public pure returns(uint256, uint256 ){
-        uint256 MAX_UINT = 2**256-1;
-        uint256 requiredTokenAmount = (MAX_UINT/10**18) + 1;
+contract CalculateAmount {
+    function calculate() public pure returns (uint256, uint256) {
+        uint256 MAX_UINT = 2**256 - 1;
+        uint256 requiredTokenAmount = (MAX_UINT / 10**18) + 1;
         uint256 val = requiredTokenAmount * 10**18;
         return (requiredTokenAmount, val);
     }

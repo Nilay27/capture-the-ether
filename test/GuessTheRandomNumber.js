@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const path = require('path');
-const util = require("../utils.js")
+const path = require("path");
+const util = require("../utils.js");
 
 var scriptName = path.basename(__filename);
 
@@ -17,10 +17,7 @@ before(async () => {
 });
 
 it("GuessTheRandomNumber", async function () {
-  const ans = await ethers.provider.getStorageAt(
-    CHALLENGE_ADDRESS,
-    0
-  );
+  const ans = await ethers.provider.getStorageAt(CHALLENGE_ADDRESS, 0);
   const tx = await contract.guess(ethers.BigNumber.from(ans), {
     value: ethers.utils.parseEther("1.0"),
   });
@@ -28,5 +25,5 @@ it("GuessTheRandomNumber", async function () {
 
   var isComplete = await contract.isComplete();
   expect(isComplete).to.be.true;
-  util.updateTotalPoints(scriptName)
+  util.updateTotalPoints(scriptName);
 });
