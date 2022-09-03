@@ -11,6 +11,7 @@ contract FiftyYearsChallenge {
     uint256 head;
 
     address owner;
+
     function FiftyYearsChallenge(address player) public payable {
         require(msg.value == 1 ether);
 
@@ -32,7 +33,9 @@ contract FiftyYearsChallenge {
         } else {
             // Append a new contribution. Require that each contribution unlock
             // at least 1 day after the previous one.
-            require(timestamp >= queue[queue.length - 1].unlockTimestamp + 1 days);
+            require(
+                timestamp >= queue[queue.length - 1].unlockTimestamp + 1 days
+            );
 
             contribution.amount = msg.value;
             contribution.unlockTimestamp = timestamp;

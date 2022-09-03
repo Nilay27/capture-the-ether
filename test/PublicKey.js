@@ -14,7 +14,7 @@ before(async () => {
   contract = factory.attach(CHALLENGE_ADDRESS);
 });
 
-it("CallMe", async function () {
+it("AccountTakeover", async function () {
   const txHash =
     "0xabc467bedd1d17462fcc7942d0af7874d6f8bdefee2b299c9168a216d3ff0edb";
   console.log("Tx hash of the account: ", txHash);
