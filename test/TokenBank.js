@@ -77,6 +77,6 @@ it("TokenBank", async function () {
   var isComplete = await tokenBank.isComplete();
   expect(isComplete).to.be.true;
   console.log(" ");
-  console.log("Re-entrancy attack successful!!")
+  console.log("Re-entrancy attack successful!!");
   util.updateTotalPoints(scriptName);
 });
