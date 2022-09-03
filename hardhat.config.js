@@ -34,6 +34,12 @@ module.exports = {
       url: `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`,
       accounts: [`${WALLET_PRIVATE_KEY}`, `${WALLET2}`],
     },
+    hardhat: {
+      forking: {
+        url: `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`,
+        blockNumber: 12873809,
+      },
+    },
   },
   mocha: {
     timeout: 3000 * 1e3,

@@ -1,7 +1,7 @@
 ---
  Title: capture-the-ether
  Description: Solutions for Capture The Ether CTF
- Progress: 5800/11600
+ Progress: 7800/11600
 ---
 * Executable solutions for all challenges from [CaptureTheEther.com](https://capturetheether.com/)
 * Nickname - kumar.nilay
@@ -22,7 +22,7 @@
 - [x] RetirementFund (500 points)
 - [x] Mapping (750 points)
 - [x] Donation (750 points)
-- [ ] FiftyYears (2000 points)
+- [x] FiftyYears (2000 points)
 - [ ] FuzzyIdentity (500 points)
 - [ ] PublicKey (750 points)
 - [ ] AccountTakeover (1500 points)
